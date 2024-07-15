@@ -1,0 +1,8 @@
+varnishadm vcl.load vcl-bozkurt-orig /etc/varnish/bozkurt.vcl 
+varnishadm vcl.load purge-vcl /etc/varnish/purge.vcl
+varnishadm vcl.load vcl-ozan-orig /etc/varnish/ozan.vcl
+varnishadm vcl.label label-bozkurt vcl-bozkurt-orig
+varnishadm vcl.label label-purge purge-vcl
+varnishadm vcl.label label-ozan vcl-ozan-orig
+varnishadm vcl.load root_vcl /etc/varnish/root.vcl
+varnishadm vcl.use root_vcl
