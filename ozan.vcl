@@ -13,6 +13,7 @@ sub vcl_recv {
 sub vcl_backend_response {
 	set beresp.ttl = 1h;
 }
+
 sub vcl_deliver {
     if (obj.hits > 0) {
         set resp.http.X-Cache = "HIT";
@@ -20,3 +21,4 @@ sub vcl_deliver {
         set resp.http.X-Cache = "MISS";
     }
 }
+
